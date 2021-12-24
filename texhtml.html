@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="csrf-token" content="{{ csrf_token() }}">
+<style type="text/css"></style>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+}
+#root{
+  margin: auto;
+  border-style: ridge;
+  border-color: #333;
+  background-color: #333;
+  width: 1200px;
+  height: 515px;
+  overflow: auto;
+}
+.box {
+  margin: auto;
+  align-items: center;
+  text-align: center;
+  overflow: auto;
+}
+div.social-floater {
+    background-image: url("data/urlboxRight.png");
+    width: 58px;
+    height: 224px;
+    position: fixed;
+    right: 0px;
+    top: 25%;
+}
+div.social-floater-youtube {
+    position: absolute;
+    top: 7px;
+    left: 9px;
+}
+div.social-floater-twatter {
+    position: absolute;
+    top: 63px;
+    left: 9px;
+}
+div.social-floater-farcebook {
+    position: absolute;
+    top: 113px;
+    left: 9px;
+}
+div.social-floater-irc {
+    position: absolute;
+    top: 163px;
+    left: 10px;
+}
+.x{
+  border-style: ridge;
+  border-color: #333;
+}
+.topnav {
+  position: relative;
+  overflow: hidden;
+  background-color: #333;
+  top: 3px;
+}
+.topnav button {
+  float: left;
+  background-color: #ddd;
+  border: none;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topnav button:hover {
+  background-color: #808000;
+  color: white;
+}
+.topnav button.active {
+  background-color: #808000;
+  color: white;
+}
+.o{
+  margin: auto;
+  border-style: ridge;
+  border-color: #333;
+  background-color:#333;
+  width: 750px;
+  height: 60px;
+  overflow: auto;
+}
+#a{
+  margin: 0;
+  position: relative;
+  border-style: ridge;
+  border-color: #808000;
+  float: right;
+  background-color: white;
+  width: 570px;
+  height: 500px;
+  top: 5px;
+  right: 5px;
+  overflow: auto;
+}
+#a2{
+  position: relative;
+  left: 125px;
+  top: 5px;
+}
+#a22{
+  position: relative;
+  top: 5px;
+  left: 125px;
+}
+.t {
+  text-align: center;
+}
+.c {
+  margin: 0;
+  position: relative;
+  text-align: center;
+}
+.b {
+  background-color: #808000;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+a:link#a3,a:visited#a3{
+  background-color: #808000;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+a:hover#a3, a:active#a3 {
+  background-color: #ddd;
+  color: black;
+}
+.e{
+  position: relative;
+  left : 100px;
+}
+.g{
+  position: relative;
+  top: 3px;
+  left: 10px;
+}
+.h{
+  margin: 0;
+  position: relative;
+  border-style: ridge;
+  border-color: #808000;
+  background-color: white;
+  left : 5px;
+  width: 570px;
+  height: 500px;
+  top: 5px;
+  right: 5px;
+}
+.lab{
+  background-color: #ddd;
+  color: black;
+  border-style: ridge;
+  border-color: #808000;
+}
+table{
+	border-collapse: collapse;
+}
+
+table tr td {
+	border: solid 1px #cdcdcd;
+}
+
+table tr td p {
+	margin: 0px;
+}
+</style>
+<meta charset="utf-8">
+<title>Generate Practice</title>
+</head>
+<body>
+    <div class="box">
+        <img class="x" src="data/TexCon.png">
+    </div>	
+    <div id="root">
+      <div>    
+        <div id="a"></div>
+        <div class="h">
+          <textarea id="ip" class="input" style="width:565px;height:495px;"></textarea>
+        </div>
+      </div>
+    </div>
+	<div class="c"> 
+		<button id="do-convert" class="b">Chuyển đổi</button>
+	    <input type="button" id="do-reset" class="b" value="Làm mới"/>
+	</div>
+    <div class="social-floater">
+      <div class="social-floater-youtube">
+       <a href="https://www.youtube.com/channel/UCS_Z4J5mjvdpV1-viuTmZ9Q" target="_blank"><img src="data/youtube-logo.png" alt="Follow me on Youtube" title="Follow me on Youtube"></a>
+      </div>
+      <div class="social-floater-twatter">
+       <a href="https://twitter.com/obitanatp" target="_blank"><img src="data/twitter-logo.png" alt="Follow me on Twitter" title="Follow me on Twitter"></a>
+      </div>
+      <div class="social-floater-farcebook">
+       <a href="https://www.facebook.com/obitanatp/" target="_blank"><img src="data/facebook-logo.png" alt="Follow me on Facebook" title="Follow me on Facebook"></a>
+      </div>
+      <div class="social-floater-irc">
+        <a href="https://discord.gg/sRb4G6Kw" target="_blank"><img src="data/discord-logo.png" alt="Join the my DISCORD Channel" title="Join the my DISCORD Channel"></a>
+      </div>
+     </div>
+    <script src="../../dist/html2pdf.bundle.js"></script>
+    <script>
+      var currentTime = new Date().getHours();
+      if (document.body) {
+        if (7 <= currentTime && currentTime < 20) {
+          document.body.background = "data/background.jpg";
+        }
+        else {
+          document.body.background = "data/background2.png";
+        }
+      }
+      function tex2jax(tex) {
+	    let s = new String(tex);
+	    let il = -1;
+	    let ir = -1;
+	    let len = s.length;
+
+	while(true) {
+		il = s.indexOf("$");
+		if (il < 0 || il == len-1) break;
+		ir = s.indexOf("$", il+1);
+		if (ir < 0) break;
+		s = s.substring(0, il) + "\\(" + s.substring(il+1, ir) + "\\)" + s.substring(ir+1);
+	}
+
+	s = s.replace(/\\begin{center}/g, "<center>");
+	s = s.replace(/\\end{center}/g, "</center>");
+	s = s.replace(/\\begin{enumerate}\s*\\item/g, "<ul><li>");
+	s = s.replace(/\\item/g, "</li><li>");
+	s = s.replace(/\\end{enumerate}/g, "</li></ul>");
+	s = s.replace(/\\\\/g, "<br>");
+	s = s.replace(/\\textbf{([^}]*)}/g, "<b>$1</b>");
+	s = s.replace(/\\textit{([^}]*)}/g, "<i>$1</i>");
+	s = s.replace(/^$1/,"<sup>$1</sup>")
+
+	return s;
+}
+
+function tex2html(tex) {
+	let ls = "";
+	let cs = "";
+	let rs = "";
+	
+	let il = tex.indexOf("\\begin{tikzpicture}");
+	let ir = tex.indexOf("\\end{tikzpicture}");
+
+	if (il > 0 && ir > 0 && il < ir) {
+		ls = tex.substring(0, il);
+		cs = tex.substring(il, ir);
+		rs = tex.substring(ir);
+		ls = tex2jax(ls);
+		rs = tex2html(rs);
+	} else {
+		ls = tex2jax(tex);
+		cs = "";
+		rs = "";
+	}
+	return (ls + cs + rs);
+}
+function parseTex(tex){
+    let v = new String(tex).replace(/(\r\n|\n|\r)/gm,"#").replace(/\s+/g,"#").trim();
+	v=v.split("#");
+	for (let i = 0; i < v.length; i++) {
+		v[i] = v[i].replace(/%.*$/g, "").replace(/\s\s*/g, " ").trim();
+	}
+	let h = [];
+	let d = [];
+	let t1 = [];
+	let t2 = [];
+	let t3 = [];
+	let g = [];
+	let noq = -1;
+	let reserved = false;
+
+	let state = 0;
+	let s = "";
+
+	for (let i = 0; i < v.length; i++) {
+		if (v[i].indexOf("\\begin{tikzpicture}") >= 0) reserved = true;
+		if (state == 0) { 
+			if (v[i].toLowerCase().indexOf("\\begin{ex}") == 0) {
+				state = 1;
+				s = v[i].substring("\\begin{ex}".length); 
+			}
+		} else if (state == 1) { 
+			if (v[i].toLowerCase().indexOf("\\choice") == 0) {
+				s = s.trim();
+				s = tex2html(s);
+				s = "<p>" + s + "</p>"
+				noq++;
+				h.push(new String(s));
+				d.push("");
+				t1.push("");
+				t2.push("");
+				t3.push("");
+				g.push("");
+				state = 2;
+				s = "";
+			} else {
+				if (v[i] == "") {
+					if (reserved) s += "<br>";
+					else s += "</p><p>";
+				}
+				else {
+					s += v[i];
+					if (reserved) s += "<br>";
+				}
+			}
+		} else if (state == 2) { 
+			if (v[i] == "") {
+				if (s != "") {
+					if (reserved) s += "<br>";
+					else s += "</p><p>";
+				}
+			} else {
+				s += v[i];
+				if (reserved) s += "<br>";
+			}
+			if (v[i][v[i].length-1] == '}') {
+				s = s.replace(/^\s*{\s*/,"").replace(/\s*}*$/,"").trim();
+				s = tex2html(s);
+				s = "<p>" + s + "</p>";
+				d[noq] = new String(s);
+				
+				state = 3;
+				s = "";
+			}
+		} else if (state == 3) { 
+			if (v[i] == "") {
+				if (s != "") {
+					if (reserved) s += "<br>";
+					else s += "</p><p>";
+				}
+			} else {
+				s +=  v[i];
+				if (reserved) s += "<br>";
+			}
+			if (v[i][v[i].length-1] == '}') {
+				s = s.replace(/^\s*{\s*/,"").replace(/\s*}$/,"").trim();
+				s = tex2html(s);
+				s = "<p>" + s + "</p>";
+				t1[noq] = new String(s);
+				state = 4;
+				s = "";
+			}
+		} else if (state == 4) { 
+			if (v[i].toLowerCase().replace(/\\loigiai\s*{/,"\\solution{").indexOf("\\solution{") == 0) {
+				t2[noq] = "-";
+				t3[noq] = "-";
+				
+				state = 6;
+				s = "";
+			}
+			if (v[i] == "") {
+				if (s != "") {
+					if (reserved) s += "<br>";
+					else s += "</p><p>";
+				}
+			} else {
+				s += v[i];
+				if (reserved) s += "<br>";
+			}
+			if (v[i][v[i].length-1] == '}') {
+				s = s.replace(/^\s*{\s*/,"").replace(/\s*}$/,"").trim();
+				s = tex2html(s);
+				s = "<p>" + s + "</p>";
+				t2[noq] = new String(s);
+				
+				state = 5;
+				s = "";
+			}
+		} else if (state == 5) { 
+			if (v[i].toLowerCase().replace(/\\loigiai\s*{/,"\\solution{").indexOf("\\solution{") == 0) {
+				t3[noq] = "-";
+				
+				state = 6;
+				s = "";
+			}
+			if (v[i] == "") {
+				if (s != "") {
+					if (reserved) s += "<br>";
+					else s += "</p><p>";
+				}
+			} else {
+				s += v[i];
+				if (reserved) s += "<br>";
+			}
+
+			if (v[i][v[i].length-1] == '}') {
+				s = s.replace(/^\s*{\s*/,"").replace(/\s*}$/,"").trim();
+				s = tex2html(s);
+				s = "<p>" + s + "</p>"
+				t3[noq] = new String(s);
+					
+				state = 6;
+				s = "";
+			}
+		} else if (state == 6) { 
+			if (v[i].toLowerCase() == "\\end{ex}") {
+				s = s.replace(/\\loigiai\s*{/,"\\solution{");
+				let vv = s.split("\\solution");
+				if (vv.length == 2) {
+					h[noq] += vv[0];
+					s = vv[1];
+				} else {
+					s = s.replace(/\\solution/,"");
+				}
+				s = s.replace(/^\s*{\s*/,"").replace(/\s*}\s*$/,"").trim();
+				s = tex2html(s);
+				s = "<p>" + s + "</p>";
+				g[noq] = new String(s);
+				//
+				state = 0;
+				s = "";
+			} else {		
+				if (v[i] == "") {
+					if (reserved) s += "<br>";
+					else s += "</p><p>";
+				} else {
+					s += v[i];
+					if (reserved) s += "<br>";
+				}
+			}
+		}
+
+		if (v[i].indexOf("\\end{tikzpicture}") >= 0) reserved = false;
+
+	}
+	noq++;
+	let html = "";
+	for (let i = 0; i < noq; i++) {
+		if (d[i].indexOf("<p>\\True") == 0) {
+		} else if (t1[i].indexOf("<p>\\True") == 0) {
+			let tmp = new String(t1[i]);
+			t1[i] = new String(d[i]);
+			d[i] = tmp;
+		} else if (t2[i].indexOf("<p>\\True") == 0) {
+			let tmp = new String(t2[i]);
+			t2[i] = new String(d[i]);
+			d[i] = tmp;
+		} else if (t3[i].indexOf("<p>\\True") == 0) {
+			let tmp = new String(t3[i]);
+			t3[i] = new String(d[i]);
+			d[i] = tmp;
+		}
+		d[i] = d[i].replace(/^<p>\\True/, "<p>");
+
+		html += "<table>";
+      
+		html += "<tr>";
+		html += "<td>"+(i+1)+"</td>";
+		html += "</tr>";
+			
+		html += "<tr>";
+		html += "<td>H</td>";
+		html += "<td>"+h[i]+"</td>";
+		html += "</tr>";
+
+		html += "<tr>";
+		html += "<td>Đ</td>";
+		html += "<td>"+d[i]+"</td>";
+		html += "</tr>";
+
+		html += "<tr>";
+		html += "<td>T1</td>";
+		html += "<td>"+t1[i]+"</td>";
+		html += "</tr>";
+
+		html += "<tr>";
+		html += "<td>T2</td>";
+		html += "<td>"+t2[i]+"</td>";
+		html += "</tr>";
+
+		html += "<tr>";
+		html += "<td>T3</td>";
+		html += "<td>"+t3[i]+"</td>";
+		html += "</tr>";
+
+		html += "<tr>";
+		html += "<td>K</td>";
+		html += "<td>2</td>";
+		html += "</tr>";
+
+		html += "<tr>";
+		html += "<td>M</td>";
+		html += "<td>1</td>";
+		html += "</tr>";
+
+		html += "<tr>";
+		html += "<td>G</td>";
+		html += "<td>"+g[i]+"</td>";
+		html += "</tr>";
+
+		html += "</table>";
+	}
+	return html;
+}
+document.querySelector("input#do-reset").onclick = function() {
+	document.querySelector("textarea.input").value = "";
+	document.querySelector("div#a").innerHTML = "";
+};
+
+document.querySelector("button#do-convert").onclick = function() {
+	let html = parseTex(document.querySelector("textarea.input").value);
+	document.querySelector("div#a").innerHTML = html;
+};
+    </script>
+	</body>
+</html>
