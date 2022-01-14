@@ -1,1 +1,118 @@
+Cú pháp Chuyển đổi câu hỏi
+\begin{ex}
+	Họ nguyên hàm của hàm số $f(x)=x^3+x^2$ là
+	\choice	
+	{$x^4+x^3$}
+	{\True $\dfrac{x^4}{4}+\dfrac{x^3}{3}+C$}
+	{$3x^2+2x$}
+	{$\dfrac{1}{4}x^4+\dfrac{1}{4}x^3$}
+	\solution{
+		$\displaystyle \int \left(x^3+x^2\right)\,\mathrm{d}x= \dfrac{x^4}{4}+\dfrac{x^3}{3}+C$.
+	}
+\end{ex}
 
+\begin{ex}
+	Với $k$ và $n$ là hai số nguyên dương tùy ý thỏa mãn $k\le n$. Mệnh đề nào sau đây đúng?
+	\choice
+	{$\mathrm{P}_n=\dfrac{n!}{(n-k)}!$}
+	{$\mathrm{P}_n=(n-k)!$}
+	{$\mathrm{P}_n=\dfrac{n!}{k!}$}
+	{\True $\mathrm{P}_n=n!$}
+	\solution{
+		Số hoán vị của tập gồm $n$ phần tử là $\mathrm{P}_n=n!$.
+	}
+\end{ex}
+
+\begin{ex}
+	Trong không gian $Oxyz$, cho hai điểm $A(-1;1;2)$ và $B(3;-5;0)$. Tọa độ trung diểm của đoạn thẳng $AB$ là
+	\choice
+	{$(2;-4;2)$}
+	{$(4;-6;2)$}
+	{\True $(1;-2;1)$}
+	{$(2;-3;-1)$}
+	\solution{
+		 Gọi $M$ là trung điểm $AB$, khi đó tọa độ của $M$ được tính bởi
+		 \[ \heva{&x_M=\dfrac{x_A+y_A}{2}=1\\ &y_M=\dfrac{y_A+y_B}{2}=-2\\ &z_M=\dfrac{z_A+z_B}{2}=1.} \]
+	}
+\end{ex}
+
+\begin{ex}
+	Phương trình $3^{x-4}=1$ có nghiệm là
+	\choice
+	{$x=-4$}
+	{\True $x=4$}
+	{$x=0$}
+	{$x=5$}
+	\solution{
+		Phương trình đã cho tương đương với
+		\[ 3^{x-4}=3^0 \Leftrightarrow x-4=0 \Leftrightarrow x=4. \] 
+	}
+\end{ex}
+
+\begin{ex}
+	Cho hàm số $y=f(x)$ có bảng biến thiên như sau
+	\begin{center}
+		\begin{tikzpicture}[line cap=round, line join=round,font=\footnotesize,>=stealth, scale=1]
+		\tkzTabInit[nocadre=false,lgt=1.2,espcl=2.5,deltacl=0.6]
+		{$x$ /0.6,$y’$ /0.6,$y$ /2}
+		{$-\infty$, $0$, $2$, $+\infty$}
+		\tkzTabLine{,+,0,-,0,+,}
+		\tkzTabVar{-/$0$, +/$1$, -/$-3$, +/$+\infty$}
+		\end{tikzpicture}
+	\end{center}
+	Hàm số đã cho đồng biến trên khoảng nào dưới đây?
+	\choice
+	{\True $(2;+\infty)$}
+	{$(-\infty;1)$}
+	{$(0;+\infty)$}
+	{$(0;2)$}
+	\solution{
+		Dựa vào bảng biến thiên, hàm số đã cho đồng biến trên các khoảng $(-\infty;0)$ và $(2;+\infty)$. 
+	}
+\end{ex}
+
+\begin{ex}
+	Cho dãy số $(u_n)$ với $u_n=2n+5$. Số hạng $u_4$ bằng
+	\choice
+	{$19$}
+	{$11$}
+	{$21$}
+	{\True $13$}
+	\solution{
+		Ta có $u_4=2\cdot 4+5=13$. 
+	}
+\end{ex}
+
+\begin{ex}
+	Tiệm cận đứng của đồ thị hàm số $y=\dfrac{3x-5}{x-2}$ là
+	\choice
+	{\True $x=2$}
+	{$y=2$}
+	{$x=3$}
+	{$y=3$}
+	\solution{
+		Ta có $\lim\limits_{x\to 2^+}\dfrac{3x-5}{x-2}=+\infty$ và $\lim\limits_{x\to 2^-}\dfrac{3x-5}{x-2}=-\infty$ nên $x=2$ là tiệm cận đứng của đồ thị hàm số đã cho. 
+	}
+\end{ex}
+
+\begin{ex}
+	\immini{
+		Cho hàm số $y=ax^3+bx^2+cx+d$ có đồ thị như hình vẽ. Số điểm cực trị của hàm số đã cho là
+	\choice
+	{\True $2$}
+	{$1$}
+	{$0$}
+	{$3$}
+	}{
+		\begin{tikzpicture}[line cap=round, line join=round,font=\footnotesize,>=stealth, scale=1]
+		\tikzset{label style/.style={font=\footnotesize}}
+			\draw[->](-2,0)--(2,0) node[below]{$x$};
+			\draw[->](0,-1)--(0,2) node[left]{$y$};
+			\draw[smooth, samples=100, domain=-1.7:1.2] plot (\x, { -(\x+1)^2*(\x-1) });
+			\fill[black] (0,0) circle (1pt) node[below left]{$O$};
+		\end{tikzpicture}
+	}
+	\solution{
+		Dựa vào đồ thị hàm số, số điểm cực trị của hàm số đã cho là $2$. 
+	}
+\end{ex}
